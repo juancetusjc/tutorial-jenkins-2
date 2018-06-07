@@ -11,13 +11,8 @@
 
 	<name>Tutorial Jenkins 2</name>
 	<description>Aplicación de ejemplo para el tutorial de Jenkins 2</description>
-	<!-- 
-	<parent>
-		<groupId>pe.gob.osce.cfg</groupId>
-		<artifactId>pe.gob.osce.cfg.maven</artifactId>
-		<version>1.0</version>
-	</parent>
-	-->
+	 
+	
 	 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -26,6 +21,22 @@
 		<relativePath/> 
 	</parent>
 	
+	    <!-- DISTRIBUCION  -->
+	<distributionManagement>
+		<!-- Publish versioned releases here -->
+		<repository>
+			<id>osce-releases</id>
+			<name>OSCE Releases</name>
+			<url>http://192.168.32.40/nexus3/repository/osce-releases</url>
+		</repository>
+	 
+		 <!-- Publish snapshots here -->
+		<snapshotRepository>
+			<id>osce-snapshots</id>
+			<name>OSCE Snapshots</name>
+			<url>http://192.168.32.40/nexus3/repository/osce-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 	<!-- lookup parent from repository -->
  	
 	<properties>

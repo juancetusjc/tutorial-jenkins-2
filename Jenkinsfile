@@ -51,7 +51,12 @@ node {
 
    stage 'Deploy Nexus'
    echo 'Despliega el paquete generado en el repositorio Nexus'
-   sh 'mvn clean deploy'
+   
+   sshagent(credentials: ['oracle-pre-priv']) {
+    ssh 'ssh -o StrictHostKeyChecking=no -l oracle 192.168.4.129 uname -a'    
+  }
+
+   //sh 'mvn clean deploy'
 
    // ------------------------------------
    // -- ETAPA: Archivar
