@@ -17,7 +17,7 @@ node {
    echo 'Descargando código de SCM'
 
    echo 'Ejecutando rm -rf *'
-   //sh 'rm -rf *'
+   sh 'rm -rf *'
 
    echo 'Paso Checkout'   
 
@@ -48,7 +48,11 @@ node {
    stage 'Instalar'
    echo 'Instala el paquete generado en el repositorio maven'
    sh 'mvn install -Dmaven.test.skip=true'
-   
+
+   stage 'Deploy Nexus'
+   echo 'Despliega el paquete generado en el repositorio Nexus'
+   sh 'mvn clean deploy'
+
    // ------------------------------------
    // -- ETAPA: Archivar
    // ------------------------------------
