@@ -11,20 +11,21 @@
 
 	<name>Tutorial Jenkins 2</name>
 	<description>Aplicación de ejemplo para el tutorial de Jenkins 2</description>
+	<!-- 
 	<parent>
 		<groupId>pe.gob.osce.cfg</groupId>
 		<artifactId>pe.gob.osce.cfg.maven</artifactId>
 		<version>1.0</version>
 	</parent>
-
-	<!-- 
+	-->
+	 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.3.5.RELEASE</version>
 		<relativePath/> 
 	</parent>
-	-->
+	
 	<!-- lookup parent from repository -->
  	
 	<properties>
