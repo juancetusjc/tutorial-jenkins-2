@@ -47,14 +47,14 @@ node {
    // ------------------------------------
    stage 'Instalar'
    echo 'Instala el paquete generado en el repositorio maven'
-   sh 'mvn install -Dmaven.test.skip=true'
+   //sh 'mvn install -Dmaven.test.skip=true'
 
    stage 'Deploy Nexus'
    echo 'Despliega el paquete generado en el repositorio Nexus'
    
    sshagent(credentials: ['oracle-pre-priv']) {
-    //sh 'ssh -o StrictHostKeyChecking=no -l oracle 192.168.4.129 uname -a'    
-    sh 'uname -a'    
+    sh 'ssh -o StrictHostKeyChecking=no -l oracle 192.168.4.129 uname'    
+    //sh 'uname -a'    
   }
 
    //sh 'mvn clean deploy'
@@ -62,7 +62,7 @@ node {
    // ------------------------------------
    // -- ETAPA: Archivar
    // ------------------------------------
-   stage 'Archivar'
-   echo 'Archiva el paquete el paquete generado en Jenkins'
-   step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war', fingerprint: true])
+   //stage 'Archivar'
+   //echo 'Archiva el paquete el paquete generado en Jenkins'
+   //step([$class: 'ArtifactArchiver', artifacts: '**/target/*.jar, **/target/*.war', fingerprint: true])
 }
