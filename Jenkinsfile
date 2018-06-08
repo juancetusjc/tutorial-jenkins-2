@@ -53,8 +53,8 @@ node {
    echo 'Despliega el paquete generado en el repositorio Nexus'
    
    sshagent(credentials: ['oracle-pre-priv']) {
-    sh 'ssh -o StrictHostKeyChecking=no -l oracle 192.168.4.129 uname -a'    
-    //ssh 'uname'    
+    //sh 'ssh -o StrictHostKeyChecking=no -l oracle 192.168.4.129 uname -a'    
+    sh 'uname -a'    
   }
 
    //sh 'mvn clean deploy'
