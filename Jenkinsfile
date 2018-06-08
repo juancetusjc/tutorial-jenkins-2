@@ -52,7 +52,7 @@ node {
    stage 'Deploy Nexus'
    echo 'Despliega el paquete generado en el repositorio Nexus'
    
-   sshagent(credentials: ['oracle-pre-priv-test']) {
+   sshagent(credentials: ['oracle-pre-priv']) {
     ssh 'ssh -o StrictHostKeyChecking=no -l oracle 192.168.4.129 uname -a'    
   }
 
