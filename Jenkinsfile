@@ -52,10 +52,17 @@ node {
    stage 'Deploy Nexus'
    echo 'Despliega el paquete generado en el repositorio Nexus'
    
-   sshagent(credentials: ['oracle-pre-priv']) {
-    sh 'ssh -o StrictHostKeyChecking=no -l oracle 192.168.4.129 uname'    
+
+   //sshagent(credentials: ['oracle-pre-priv']) {
+   // sh 'ssh -o StrictHostKeyChecking=no -l oracle 192.168.4.129 uname'    
     //sh 'uname -a'    
-  }
+  //}
+
+
+remoteShell('oracle@192.168.4.129:22'){
+   command('echo Hello', 'echo World!')
+   command('uname')
+}
 
    //sh 'mvn clean deploy'
 
