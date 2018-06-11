@@ -58,12 +58,12 @@ node {
     //sh 'uname -a'    
   //}
 
-
-remoteShell('oracle@192.168.4.129:22'){
-   command('echo Hello', 'echo World!')
-   command('uname')
-}
-
+  steps {
+      remoteShell('oracle@192.168.4.129:22'){
+         command('echo Hello', 'echo World!')
+        // command('uname')
+      }
+   }
    //sh 'mvn clean deploy'
 
    // ------------------------------------
